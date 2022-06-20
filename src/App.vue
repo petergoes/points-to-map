@@ -1,23 +1,26 @@
 <template>
 	<div id="app">
-		<div />
+		<MapViewer :events="events" :active-event-id="'a'" />
 		<TimeLine>
-			<TimeLineItem />
-			<TimeLineItem />
-			<TimeLineItem />
+			<TimeLineItem v-for="event in events" :key="event.id">
+				{{ event.title }}
+			</TimeLineItem>
 		</TimeLine>
 	</div>
 </template>
 
 <script>
+import MapViewer from "./components/MapViewer.vue";
 import TimeLine from "./components/TimeLine.vue";
 import TimeLineItem from "./components/TimeLineItem.vue";
-import data from "./data/data.json";
-console.log({ data });
+import events from "./data/data.json";
 
 export default {
 	name: "App",
-	components: { TimeLine, TimeLineItem },
+	components: { MapViewer, TimeLine, TimeLineItem },
+	data: () => ({
+		events,
+	}),
 };
 </script>
 

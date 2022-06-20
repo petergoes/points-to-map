@@ -1,6 +1,8 @@
 <template>
 	<li class="timeline-item">
-		<div class="timeline-item__content">Timeline item</div>
+		<div class="timeline-item__content">
+			<slot />
+		</div>
 	</li>
 </template>
 
