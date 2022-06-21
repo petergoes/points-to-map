@@ -29,6 +29,6 @@
 		"pre-commit": "lint-staged"
 	},
 	"prettier": {
-		"useTabs": true
+		"useTabs": false
 	}
 }
